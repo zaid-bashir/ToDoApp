@@ -16,6 +16,10 @@ import 'package:todo/transitions/routes/slide_route.dart';
 
 Route<dynamic>? generateRoutes(RouteSettings settings) {
   switch (settings.name) {
+
+    //Added a Simple Commit
+    //=====================
+
     case SplashScreen.routeName:
       return FadeRoute(page: SplashScreen());
 
@@ -45,9 +49,12 @@ Route<dynamic>? generateRoutes(RouteSettings settings) {
 
     case AddTaskScreen.routeName:
       return SlideTopRoute(page: AddTaskScreen());
-      
+
     case EditScreen.routeName:
       final data = settings.arguments as Task;
-      return SlideLeftRoute(page: EditScreen(task: data,));
+      return SlideLeftRoute(
+          page: EditScreen(
+        task: data,
+      ));
   }
 }
